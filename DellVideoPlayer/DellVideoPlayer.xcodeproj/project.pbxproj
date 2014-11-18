@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C1879651A181F4C004E88B7 /* WallStreet.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C1879641A181F4C004E88B7 /* WallStreet.mp4 */; };
+		4C1879671A182382004E88B7 /* Cultureshift.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C1879661A182382004E88B7 /* Cultureshift.mp4 */; };
+		4C399EFC19C90C2500BF0733 /* texascapitalism.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C399EFB19C90C2500BF0733 /* texascapitalism.mp4 */; };
+		4C46E5591A150D1500B5574B /* culture.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C46E5581A150D1500B5574B /* culture.mp4 */; };
+		4C46E55B1A1529B300B5574B /* risk.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C46E55A1A1529B300B5574B /* risk.mp4 */; };
+		4C50B9001A1A835D0089571C /* Three Horizons Poster for ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50B8FF1A1A835D0089571C /* Three Horizons Poster for ipad.png */; };
+		4C50B9021A1A8C900089571C /* Three Horizons Poster for ipad two.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50B9011A1A8C900089571C /* Three Horizons Poster for ipad two.png */; };
+		4C55146319C8C3ED00AB0C98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55146219C8C3ED00AB0C98 /* Foundation.framework */; };
+		4C55146519C8C3ED00AB0C98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55146419C8C3ED00AB0C98 /* CoreGraphics.framework */; };
+		4C55146719C8C3ED00AB0C98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55146619C8C3ED00AB0C98 /* UIKit.framework */; };
+		4C55146D19C8C3ED00AB0C98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C55146B19C8C3ED00AB0C98 /* InfoPlist.strings */; };
+		4C55146F19C8C3ED00AB0C98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C55146E19C8C3ED00AB0C98 /* main.m */; };
+		4C55147319C8C3ED00AB0C98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C55147219C8C3ED00AB0C98 /* AppDelegate.m */; };
+		4C55147619C8C3ED00AB0C98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C55147419C8C3ED00AB0C98 /* Main.storyboard */; };
+		4C55147919C8C3ED00AB0C98 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C55147819C8C3ED00AB0C98 /* ViewController.m */; };
+		4C55147B19C8C3ED00AB0C98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C55147A19C8C3ED00AB0C98 /* Images.xcassets */; };
+		4C55148219C8C3ED00AB0C98 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55148119C8C3ED00AB0C98 /* XCTest.framework */; };
+		4C55148319C8C3ED00AB0C98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55146219C8C3ED00AB0C98 /* Foundation.framework */; };
+		4C55148419C8C3ED00AB0C98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55146619C8C3ED00AB0C98 /* UIKit.framework */; };
+		4C55148C19C8C3ED00AB0C98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C55148A19C8C3ED00AB0C98 /* InfoPlist.strings */; };
+		4C55148E19C8C3ED00AB0C98 /* DellVideoPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C55148D19C8C3ED00AB0C98 /* DellVideoPlayerTests.m */; };
+		4C55149819C8C47900AB0C98 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55149719C8C47900AB0C98 /* MediaPlayer.framework */; };
+		4C55149A19C8C73B00AB0C98 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55149919C8C73B00AB0C98 /* AVFoundation.framework */; };
+		4C55149C19C8CF4C00AB0C98 /* billsharpe.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C55149B19C8CF4C00AB0C98 /* billsharpe.png */; };
+		4C6F43051A1995B700AD4F33 /* futuretech.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C6F43041A1995B700AD4F33 /* futuretech.mp4 */; };
+		4C80F72019F195B3006F2F16 /* timeline.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C80F71F19F195B3006F2F16 /* timeline.png */; };
+		4C8D1A0819F1F6330029C105 /* Dell timeline.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D1A0719F1F6330029C105 /* Dell timeline.png */; };
+		4C8D1A0A19F1FD960029C105 /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D1A0919F1FD960029C105 /* playbutton.png */; };
+		4C8D1A0C19F1FFA10029C105 /* buttongreyplay.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D1A0B19F1FFA10029C105 /* buttongreyplay.png */; };
+		4C8D1A0E19F201570029C105 /* buttongreyhalfopaque.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D1A0D19F201570029C105 /* buttongreyhalfopaque.png */; };
+		4C8D1A1019F206790029C105 /* play video icon small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D1A0F19F206790029C105 /* play video icon small.png */; };
+		4C976AA71A0FFF19003B8503 /* Dell timeline2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C976AA61A0FFF19003B8503 /* Dell timeline2.png */; };
+		4C976AA91A102360003B8503 /* futurevisionipad.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C976AA81A102360003B8503 /* futurevisionipad.mp4 */; };
+		4C976AAD1A104D79003B8503 /* michaeldell.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C976AAC1A104D79003B8503 /* michaeldell.mp4 */; };
+		4CC5C18519F5C37800181DA3 /* Execution.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5C18419F5C37800181DA3 /* Execution.mp4 */; };
+		4CC5C18919F5CA1900181DA3 /* businessmodel.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5C18819F5CA1900181DA3 /* businessmodel.mp4 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C55148519C8C3ED00AB0C98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C55145719C8C3ED00AB0C98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C55145E19C8C3ED00AB0C98;
+			remoteInfo = DellVideoPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C1879641A181F4C004E88B7 /* WallStreet.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = WallStreet.mp4; sourceTree = "<group>"; };
+		4C1879661A182382004E88B7 /* Cultureshift.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cultureshift.mp4; sourceTree = "<group>"; };
+		4C399EFB19C90C2500BF0733 /* texascapitalism.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = texascapitalism.mp4; path = ../../texascapitalism.mp4; sourceTree = "<group>"; };
+		4C46E5581A150D1500B5574B /* culture.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = culture.mp4; sourceTree = "<group>"; };
+		4C46E55A1A1529B300B5574B /* risk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = risk.mp4; sourceTree = "<group>"; };
+		4C50B8FF1A1A835D0089571C /* Three Horizons Poster for ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Three Horizons Poster for ipad.png"; sourceTree = "<group>"; };
+		4C50B9011A1A8C900089571C /* Three Horizons Poster for ipad two.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Three Horizons Poster for ipad two.png"; sourceTree = "<group>"; };
+		4C55145F19C8C3ED00AB0C98 /* DellVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DellVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55146219C8C3ED00AB0C98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C55146419C8C3ED00AB0C98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C55146619C8C3ED00AB0C98 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C55146A19C8C3ED00AB0C98 /* DellVideoPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DellVideoPlayer-Info.plist"; sourceTree = "<group>"; };
+		4C55146C19C8C3ED00AB0C98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C55146E19C8C3ED00AB0C98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C55147019C8C3ED00AB0C98 /* DellVideoPlayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DellVideoPlayer-Prefix.pch"; sourceTree = "<group>"; };
+		4C55147119C8C3ED00AB0C98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C55147219C8C3ED00AB0C98 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C55147519C8C3ED00AB0C98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C55147719C8C3ED00AB0C98 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C55147819C8C3ED00AB0C98 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C55147A19C8C3ED00AB0C98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4C55148019C8C3ED00AB0C98 /* DellVideoPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DellVideoPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55148119C8C3ED00AB0C98 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4C55148919C8C3ED00AB0C98 /* DellVideoPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DellVideoPlayerTests-Info.plist"; sourceTree = "<group>"; };
+		4C55148B19C8C3ED00AB0C98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C55148D19C8C3ED00AB0C98 /* DellVideoPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DellVideoPlayerTests.m; sourceTree = "<group>"; };
+		4C55149719C8C47900AB0C98 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		4C55149919C8C73B00AB0C98 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4C55149B19C8CF4C00AB0C98 /* billsharpe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = billsharpe.png; path = ../../../../Desktop/billsharpe.png; sourceTree = "<group>"; };
+		4C6F43041A1995B700AD4F33 /* futuretech.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = futuretech.mp4; sourceTree = "<group>"; };
+		4C80F71F19F195B3006F2F16 /* timeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timeline.png; path = ../../../OCAD/Thesis/timeline.png; sourceTree = "<group>"; };
+		4C8D1A0719F1F6330029C105 /* Dell timeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Dell timeline.png"; path = "../../../OCAD/Thesis/Dell timeline.png"; sourceTree = "<group>"; };
+		4C8D1A0919F1FD960029C105 /* playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playbutton.png; path = ../../../playbutton.png; sourceTree = "<group>"; };
+		4C8D1A0B19F1FFA10029C105 /* buttongreyplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttongreyplay.png; path = ../../../buttongreyplay.png; sourceTree = "<group>"; };
+		4C8D1A0D19F201570029C105 /* buttongreyhalfopaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttongreyhalfopaque.png; path = ../../../buttongreyhalfopaque.png; sourceTree = "<group>"; };
+		4C8D1A0F19F206790029C105 /* play video icon small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play video icon small.png"; path = "../../../play video icon small.png"; sourceTree = "<group>"; };
+		4C976AA61A0FFF19003B8503 /* Dell timeline2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dell timeline2.png"; sourceTree = "<group>"; };
+		4C976AA81A102360003B8503 /* futurevisionipad.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = futurevisionipad.mp4; sourceTree = "<group>"; };
+		4C976AAC1A104D79003B8503 /* michaeldell.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = michaeldell.mp4; sourceTree = "<group>"; };
+		4CC5C18419F5C37800181DA3 /* Execution.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Execution.mp4; path = "../../../OCAD/Thesis/Thesis Interviews/Execution.mp4"; sourceTree = "<group>"; };
+		4CC5C18819F5CA1900181DA3 /* businessmodel.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = businessmodel.mp4; path = ../../businessmodel.mp4; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C55145C19C8C3ED00AB0C98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C55149A19C8C73B00AB0C98 /* AVFoundation.framework in Frameworks */,
+				4C55149819C8C47900AB0C98 /* MediaPlayer.framework in Frameworks */,
+				4C55146519C8C3ED00AB0C98 /* CoreGraphics.framework in Frameworks */,
+				4C55146719C8C3ED00AB0C98 /* UIKit.framework in Frameworks */,
+				4C55146319C8C3ED00AB0C98 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C55147D19C8C3ED00AB0C98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C55148219C8C3ED00AB0C98 /* XCTest.framework in Frameworks */,
+				4C55148419C8C3ED00AB0C98 /* UIKit.framework in Frameworks */,
+				4C55148319C8C3ED00AB0C98 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C55145619C8C3ED00AB0C98 = {
+			isa = PBXGroup;
+			children = (
+				4C55146819C8C3ED00AB0C98 /* DellVideoPlayer */,
+				4C55148719C8C3ED00AB0C98 /* DellVideoPlayerTests */,
+				4C55146119C8C3ED00AB0C98 /* Frameworks */,
+				4C55146019C8C3ED00AB0C98 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C55146019C8C3ED00AB0C98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C55145F19C8C3ED00AB0C98 /* DellVideoPlayer.app */,
+				4C55148019C8C3ED00AB0C98 /* DellVideoPlayerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C55146119C8C3ED00AB0C98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C55149919C8C73B00AB0C98 /* AVFoundation.framework */,
+				4C55149719C8C47900AB0C98 /* MediaPlayer.framework */,
+				4C55146219C8C3ED00AB0C98 /* Foundation.framework */,
+				4C55146419C8C3ED00AB0C98 /* CoreGraphics.framework */,
+				4C55146619C8C3ED00AB0C98 /* UIKit.framework */,
+				4C55148119C8C3ED00AB0C98 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C55146819C8C3ED00AB0C98 /* DellVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4C50B9011A1A8C900089571C /* Three Horizons Poster for ipad two.png */,
+				4C50B8FF1A1A835D0089571C /* Three Horizons Poster for ipad.png */,
+				4C6F43041A1995B700AD4F33 /* futuretech.mp4 */,
+				4C1879641A181F4C004E88B7 /* WallStreet.mp4 */,
+				4C1879661A182382004E88B7 /* Cultureshift.mp4 */,
+				4C46E55A1A1529B300B5574B /* risk.mp4 */,
+				4C46E5581A150D1500B5574B /* culture.mp4 */,
+				4C976AAC1A104D79003B8503 /* michaeldell.mp4 */,
+				4C976AA81A102360003B8503 /* futurevisionipad.mp4 */,
+				4C976AA61A0FFF19003B8503 /* Dell timeline2.png */,
+				4CC5C18819F5CA1900181DA3 /* businessmodel.mp4 */,
+				4C399EFB19C90C2500BF0733 /* texascapitalism.mp4 */,
+				4C55149B19C8CF4C00AB0C98 /* billsharpe.png */,
+				4C55147119C8C3ED00AB0C98 /* AppDelegate.h */,
+				4C55147219C8C3ED00AB0C98 /* AppDelegate.m */,
+				4C55147419C8C3ED00AB0C98 /* Main.storyboard */,
+				4CC5C18419F5C37800181DA3 /* Execution.mp4 */,
+				4C8D1A0F19F206790029C105 /* play video icon small.png */,
+				4C8D1A0D19F201570029C105 /* buttongreyhalfopaque.png */,
+				4C8D1A0B19F1FFA10029C105 /* buttongreyplay.png */,
+				4C55147719C8C3ED00AB0C98 /* ViewController.h */,
+				4C55147819C8C3ED00AB0C98 /* ViewController.m */,
+				4C80F71F19F195B3006F2F16 /* timeline.png */,
+				4C8D1A0919F1FD960029C105 /* playbutton.png */,
+				4C8D1A0719F1F6330029C105 /* Dell timeline.png */,
+				4C55147A19C8C3ED00AB0C98 /* Images.xcassets */,
+				4C55146919C8C3ED00AB0C98 /* Supporting Files */,
+			);
+			path = DellVideoPlayer;
+			sourceTree = "<group>";
+		};
+		4C55146919C8C3ED00AB0C98 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C55146A19C8C3ED00AB0C98 /* DellVideoPlayer-Info.plist */,
+				4C55146B19C8C3ED00AB0C98 /* InfoPlist.strings */,
+				4C55146E19C8C3ED00AB0C98 /* main.m */,
+				4C55147019C8C3ED00AB0C98 /* DellVideoPlayer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C55148719C8C3ED00AB0C98 /* DellVideoPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C55148D19C8C3ED00AB0C98 /* DellVideoPlayerTests.m */,
+				4C55148819C8C3ED00AB0C98 /* Supporting Files */,
+			);
+			path = DellVideoPlayerTests;
+			sourceTree = "<group>";
+		};
+		4C55148819C8C3ED00AB0C98 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C55148919C8C3ED00AB0C98 /* DellVideoPlayerTests-Info.plist */,
+				4C55148A19C8C3ED00AB0C98 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C55145E19C8C3ED00AB0C98 /* DellVideoPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C55149119C8C3ED00AB0C98 /* Build configuration list for PBXNativeTarget "DellVideoPlayer" */;
+			buildPhases = (
+				4C55145B19C8C3ED00AB0C98 /* Sources */,
+				4C55145C19C8C3ED00AB0C98 /* Frameworks */,
+				4C55145D19C8C3ED00AB0C98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DellVideoPlayer;
+			productName = DellVideoPlayer;
+			productReference = 4C55145F19C8C3ED00AB0C98 /* DellVideoPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C55147F19C8C3ED00AB0C98 /* DellVideoPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C55149419C8C3ED00AB0C98 /* Build configuration list for PBXNativeTarget "DellVideoPlayerTests" */;
+			buildPhases = (
+				4C55147C19C8C3ED00AB0C98 /* Sources */,
+				4C55147D19C8C3ED00AB0C98 /* Frameworks */,
+				4C55147E19C8C3ED00AB0C98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C55148619C8C3ED00AB0C98 /* PBXTargetDependency */,
+			);
+			name = DellVideoPlayerTests;
+			productName = DellVideoPlayerTests;
+			productReference = 4C55148019C8C3ED00AB0C98 /* DellVideoPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C55145719C8C3ED00AB0C98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Heather Simmons";
+				TargetAttributes = {
+					4C55147F19C8C3ED00AB0C98 = {
+						TestTargetID = 4C55145E19C8C3ED00AB0C98;
+					};
+				};
+			};
+			buildConfigurationList = 4C55145A19C8C3ED00AB0C98 /* Build configuration list for PBXProject "DellVideoPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C55145619C8C3ED00AB0C98;
+			productRefGroup = 4C55146019C8C3ED00AB0C98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C55145E19C8C3ED00AB0C98 /* DellVideoPlayer */,
+				4C55147F19C8C3ED00AB0C98 /* DellVideoPlayerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C55145D19C8C3ED00AB0C98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC5C18519F5C37800181DA3 /* Execution.mp4 in Resources */,
+				4C50B9021A1A8C900089571C /* Three Horizons Poster for ipad two.png in Resources */,
+				4C46E5591A150D1500B5574B /* culture.mp4 in Resources */,
+				4C55147B19C8C3ED00AB0C98 /* Images.xcassets in Resources */,
+				4C976AAD1A104D79003B8503 /* michaeldell.mp4 in Resources */,
+				4C399EFC19C90C2500BF0733 /* texascapitalism.mp4 in Resources */,
+				4C55149C19C8CF4C00AB0C98 /* billsharpe.png in Resources */,
+				4C8D1A0C19F1FFA10029C105 /* buttongreyplay.png in Resources */,
+				4C1879651A181F4C004E88B7 /* WallStreet.mp4 in Resources */,
+				4C8D1A0A19F1FD960029C105 /* playbutton.png in Resources */,
+				4C8D1A0819F1F6330029C105 /* Dell timeline.png in Resources */,
+				4C976AA71A0FFF19003B8503 /* Dell timeline2.png in Resources */,
+				4C55146D19C8C3ED00AB0C98 /* InfoPlist.strings in Resources */,
+				4C80F72019F195B3006F2F16 /* timeline.png in Resources */,
+				4C1879671A182382004E88B7 /* Cultureshift.mp4 in Resources */,
+				4C8D1A0E19F201570029C105 /* buttongreyhalfopaque.png in Resources */,
+				4C46E55B1A1529B300B5574B /* risk.mp4 in Resources */,
+				4C976AA91A102360003B8503 /* futurevisionipad.mp4 in Resources */,
+				4C6F43051A1995B700AD4F33 /* futuretech.mp4 in Resources */,
+				4C55147619C8C3ED00AB0C98 /* Main.storyboard in Resources */,
+				4C50B9001A1A835D0089571C /* Three Horizons Poster for ipad.png in Resources */,
+				4C8D1A1019F206790029C105 /* play video icon small.png in Resources */,
+				4CC5C18919F5CA1900181DA3 /* businessmodel.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C55147E19C8C3ED00AB0C98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C55148C19C8C3ED00AB0C98 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C55145B19C8C3ED00AB0C98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C55147919C8C3ED00AB0C98 /* ViewController.m in Sources */,
+				4C55147319C8C3ED00AB0C98 /* AppDelegate.m in Sources */,
+				4C55146F19C8C3ED00AB0C98 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C55147C19C8C3ED00AB0C98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C55148E19C8C3ED00AB0C98 /* DellVideoPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C55148619C8C3ED00AB0C98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C55145E19C8C3ED00AB0C98 /* DellVideoPlayer */;
+			targetProxy = 4C55148519C8C3ED00AB0C98 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C55146B19C8C3ED00AB0C98 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C55146C19C8C3ED00AB0C98 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C55147419C8C3ED00AB0C98 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C55147519C8C3ED00AB0C98 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C55148A19C8C3ED00AB0C98 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C55148B19C8C3ED00AB0C98 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C55148F19C8C3ED00AB0C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4C55149019C8C3ED00AB0C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C55149219C8C3ED00AB0C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DellVideoPlayer/DellVideoPlayer-Prefix.pch";
+				INFOPLIST_FILE = "DellVideoPlayer/DellVideoPlayer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C55149319C8C3ED00AB0C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DellVideoPlayer/DellVideoPlayer-Prefix.pch";
+				INFOPLIST_FILE = "DellVideoPlayer/DellVideoPlayer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4C55149519C8C3ED00AB0C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DellVideoPlayer.app/DellVideoPlayer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DellVideoPlayer/DellVideoPlayer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DellVideoPlayerTests/DellVideoPlayerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4C55149619C8C3ED00AB0C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DellVideoPlayer.app/DellVideoPlayer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DellVideoPlayer/DellVideoPlayer-Prefix.pch";
+				INFOPLIST_FILE = "DellVideoPlayerTests/DellVideoPlayerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C55145A19C8C3ED00AB0C98 /* Build configuration list for PBXProject "DellVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C55148F19C8C3ED00AB0C98 /* Debug */,
+				4C55149019C8C3ED00AB0C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C55149119C8C3ED00AB0C98 /* Build configuration list for PBXNativeTarget "DellVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C55149219C8C3ED00AB0C98 /* Debug */,
+				4C55149319C8C3ED00AB0C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C55149419C8C3ED00AB0C98 /* Build configuration list for PBXNativeTarget "DellVideoPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C55149519C8C3ED00AB0C98 /* Debug */,
+				4C55149619C8C3ED00AB0C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C55145719C8C3ED00AB0C98 /* Project object */;
+}
