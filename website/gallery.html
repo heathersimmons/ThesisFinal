@@ -1,157 +1,103 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Dell Photo Gallery</title>
 
-    <head>
-	<link rel="stylesheet" href="../boilerplate.css">
-	<link rel="stylesheet" href="../page.css">
-    <link href='http://fonts.googleapis.com/css?family=Slabo+13px' rel='stylesheet' type='text/css'>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-    <title>Dell:The Innovation Imperative:  Gallery</title>
-	<link rel="stylesheet" href="../flexslider.css" type="text/css" media="screen" />
+<!--
+Template created by http://html-tuts.com/>HTML-TUTS.com. View full tutorial at http://html-tuts.com/.
+-->
 
-	<!-- Modernizr -->
-    <script src="../modernizr.js"></script>
+<style type="text/css">
+body {
+	background-color: #323232;
+	color:#FFF;
+	margin-top: 20px;
+	font-family:eb-garamond;
+	font-weight:normal;
+	
+}
+a {
+	color: #FFF;
+}
+a:hover {
+	color: #FFF;
+	text-decoration: underline;
+	text-align: left;
+	left: auto;
+}
+a.back {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-decoration:none;
+	color:#323232;
+	font-weight: normal;
+	display:block;
+	margin-left:20px;
+	margin-top:1em;
+	/*text-shadow: 1px 1px 4px #000;*/
+	font-size: 1.2em;
+	line-height:1;
+}
+
+a.back:link{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-decoration:none;
+	color:#323232;
+	font-weight: normal;
+	display:block;
+	margin-left:20px;
+	margin-top:1em;
+	/*text-shadow: 1px 1px 4px #000;*/
+	font-size: 1.2em;
+	line-height:1;
+}
+.back_arrow{
+		
+}
+
+.thumbnails img {
+	height: 80px;
+	border: 4px solid #555;
+	padding: 1px;
+	margin: 0 10px 10px 0;
+}
+
+.thumbnails img:hover {
+	border: 4px solid #00ccff;
+	cursor:pointer;
+}
+
+.preview img {
+	border: 4px solid #444;
+	padding: 1px;
+	width: 800px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="gallery" align="center">
+	
+<div><a href="dell.html"><span>&lt;</span>&nbsp;Home</a>
+</div>
+	<br />
+
+	<div class="thumbnails">
+	  <img onmouseover="preview.src=img1.src" name="img1" src="michael dell very young.png" alt=""/>
+	  <img onmouseover="preview.src=img2.src" name="img2" src="competitor stock price 300 cropped.png" alt=""/>
+	  <img onmouseover="preview.src=img4.src" name="img4" src="frontoftshirtwithtext3.png" alt=""/>
+	  <img onmouseover="preview.src=img5.src" name="img5" src="backoftshirtwithtext.png" alt=""/>
+      <img onmouseover="preview.src=img6.src" name="img6" src="intelligent gambler for web.png" alt=""/>
+      <img onmouseover="preview.src=img7.src" name="img7" src="dellacquisitions20082014withtext.png" alt=""/>
         
-    </head>
-<body class="loading">
+	</div><br/>
 
-    <div id="primaryContainer" class="primaryContainer clearfix">
-        
-        <div id="header" class="clearfix">
-            <h1><a href="../index.html">Dell: The Innovation Imperative</a></h1>
-            <div>
-                <a class="back" href="../dell.html"><span class="back_arrow">&lt;</span>&nbsp;Home</a>
-            </div>
-            
-        </div>
-        
-        <div id="content" class="clearfix">
-        
-        <section class="slider">
-        <div class="flexslider">
-          <ul class="slides">
-          <li>
-  	    	    <img src="../michael dell very young.png" />
-  	    		</li> 
-          <li>
-  	    	    <img src="../competitor stock price 300 cropped.png" />
-                
-  	    		</li>
-                
-  	    		
-                <li>
-  	    	    <img src="../directandindirectwithtext300.png" />
-  	    		</li>
-                
-                
-                <li>
-  	    	    <img src="../dell our people.jpg" />
-  	    		</li>
-                
-                 <li>
-  	    	    <img src="../frontoftshirtwithtext3.png" />
-  	    		</li>
-                <li>
-  	    	    <img src="../backoftshirtwithtext.png" />
-  	    		</li>
-                 <li>
-  	    	    <img src="../new chips144withlargertext.png" />
-  	    		</li>
-                
-               
-                <li>
-  	    	    <img src="../rollinstodellwithtext.png" />
-  	    		</li>
-                
-  	    	    
-                <li>
-  	    	    <img src="../intelligent gambler for web.png" />
-  	    		</li>
-                <li>
-  	    	    <img src="../acquisitions2008withtext300.png" />
-  	    		</li>
-                <li>
-  	    	    <img src="../acquisitions20082014withtext300.png" />
-  	    		</li>
-                <li>
-  	    	    <img src="../dellproductportfolio.png" />
-  	    		</li>
-                
-                <li>
-  	    	    <img src="../dellfutureprofitsthirdround5withtext.png" />
-  	    		</li>
-                <li>
-  	    	    <img src="../willing and able third horizon300.png" />
-  	    		</li>
-                <li>
-  	    	    <img src="../Three Horizons Poster filled in.png" />
-  	    		</li>
-                
-  	    	    
-          </ul>
- 	      <div id="counter"><span id="cur_slide">1</span>/<span id="tot_slides">0</span></div>
-        </div>
-      </section>
-            
-            <!-- <ul id="links">
-                <li><a class="mrpDoc" href="i/TrendSpread.pdf">Report</a></li>
-                <li><a class="experts" href="https://www.youtube.com/watch?v=oYhJteLt4yQ">Experts</a></li>
-                <li><a class="photos" href="#">Photos</a></li>
-            </ul>
-            -->
-            
-        </div>
-    </div>
-        
-    
-        <!-- jQuery -->
-          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-          <!--<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>-->
-          
-          <script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-1.11.2.min.js">')</script>
+	<div class="preview" align="center">
+		<img name="preview" src="preview.png" alt=""/>
+	</div>
 
-          <!-- FlexSlider -->
-          <script defer src="../jquery.flexslider.js"></script>
-
-          <script type="text/javascript">
-            $(function(){
-              SyntaxHighlighter.all();
-            });
-			var curSlide;
-			var numSlides;
-            $(window).load(function(){
-              $('.flexslider').flexslider({
-                animation: "slide",
-                smoothHeight: "true",
-                start: function(slider){
-                  $('body').removeClass('loading');
-				  window.numSlides = slider.count;
-				  $('#tot_slides').text(window.numSlides);
-                },
-				after:function(slider){
-					window.curSlide = slider.currentSlide;
-					useCurSlideHere();
-				}
-              });
-            });
-			function useCurSlideHere() {
-			  //alert(window.curSlide);
-			  $('#cur_slide').text(window.curSlide+1);
-			}
-			
-          </script>
+</div>
 
 
-          <!-- Syntax Highlighter -->
-          <script type="text/javascript" src="../shCore.js"></script>
-          <script type="text/javascript" src="../shBrushXml.js"></script>
-          <script type="text/javascript" src="../shBrushJScript.js"></script>
-
-          <!-- Optional FlexSlider Additions -->
-          <script src="../jquery.easing.js"></script>
-          <script src="../jquery.mousewheel.js"></script>
-          <script defer src="../demo.js"></script>
-        
-    </body>
+</body>
 </html>
