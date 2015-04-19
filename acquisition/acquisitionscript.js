@@ -1,21 +1,21 @@
-//slider functionality inspired by http://bl.ocks.org/darrenjaworski/5544599
+//Animated scatterplot code and styling modified from http://bl.ocks.org/darrenjaworski/5544599
 
 $(document).ready(function()	{
 	
-//bounding box, leave room for legend, title, etc.	
-	var margin = { 
+//bounding box, leave room for legend, title, etc.
+	var margin = {
 		top : 80,
 		right : 100,
 		bottom : 60,
 		left : 10
 	}, width = 725 - margin.left - margin.right, height = 600 - margin.top - margin.bottom;
 
-//scales
+//scales for axes
 	var x = d3.scale.linear()
 		.range([0, width]);
 	
 	var y = d3.scale.linear()
-		.range([height, 0]);	
+		.range([height, 0]);
 	
 	var padding = 2;
 
@@ -24,13 +24,13 @@ $(document).ready(function()	{
 		.append("div")
 			.attr("id", "info")
 			.style("opacity", 0);
-			
-//add tooltips for more info on mouseover			
+		
+//add tooltips for more info on mouseover
 	var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
-//create 6 colours for 6 product categories	
+//create 6 colours for 6 product categories;
 	var color = d3.scale.ordinal()
 		.domain([1, 2, 3, 4, 5, 6])
 		.range(["#323232","#9C855E","#AB211C","#5C8E76","5B87C6","1CA6AB"]);
@@ -45,8 +45,8 @@ $(document).ready(function()	{
 		.scale(y)
 		.ticks(0)
 		.orient("left");
-
-//append chart, size varies according to size of screen 
+		
+//append chart, size varies according to size of screen
 	var svg = d3.select("#chart")
 		.append("svg")
 			.attr("class", "chart")
@@ -56,25 +56,25 @@ $(document).ready(function()	{
 			.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 			
-//horizontal line through middle of chart			
+//horizontal line through middle of chart						
 	svg.append("line") 
-		.attr("class","line")         // attach a line
-    	.style("stroke", "#323232")  // colour the line
-    	.attr("x1", 0)     // x position of the first end of the line
-    	.attr("y1", height/2)      //y position of the first end of the line
-    	.attr("x2", width)     // x position of the second end of the line
-    	.attr("y2", height/2);    // y position of the second end of the line
+	.attr("class","line")         // attach a line
+    .style("stroke", "#323232")  // colour the line
+    .attr("x1", 0)     // x position of the first end of the line
+    .attr("y1", height/2)      // y position of the first end of the line
+    .attr("x2", width)     // x position of the second end of the line
+    .attr("y2", height/2);    // y position of the second end of the line
 	
-//vertical line through middle of chart	
+//vertical line through middle of chart			
 	svg.append("line") 
-		.attr("class","line")         // attach a line
-    	.style("stroke", "#323232")  // colour the line
-    	.attr("x1", width*.5)     // x position of the first end of the line
-    	.attr("y1", height-height)      // y position of the first end of the line
-    	.attr("x2", width*.5)     // x position of the second end of the line
-    	.attr("y2", height);    // y position of the second end of the line
+	.attr("class","line")         // attach a line
+    .style("stroke", "#323232")  // colour the line
+    .attr("x1", width/2)     // x position of the first end of the line
+    .attr("y1", height-height)      // y position of the first end of the line
+    .attr("x2", width/2)     // x position of the second end of the line
+    .attr("y2", height);    // y position of the second end of the line
 			
-//use acquire.csv as data source
+
 	d3.csv("acquire.csv", function(error, data) {
 
 //set axes length
@@ -82,43 +82,43 @@ $(document).ready(function()	{
 		y.domain([0, 10000]).nice();
 
 //append x axis with text label
-	svg.append("g")
-		.attr("class", "x axis")
-		.attr("transform", "translate(0," + height + ")")
-		.call(xAxis)
-		.append("text")
+		svg.append("g")
+			.attr("class", "x axis")
+			.attr("transform", "translate(0," + height + ")")
+			.call(xAxis)
+			.append("text")
 				.attr("class", "label")
 				.attr("x", width*.85)
 				.attr("y", 50)
 				.style("text-anchor", "end")
 				.style("font-size","24px")
 				.text("Degree of Difference from PC Business");
-				
+
 //text label for right hand box on x axis			
-	svg.append("g")
-		.append("text")
+				svg.append("g")
+				.append("text")
 				.style("font-size","18px")
 				.attr("class", "label")
 				.attr("text-anchor", "end")
 				.attr("x", width*.99)
 				.attr("y", height*1.05)
 				.text("High");
-				
-//text label for left hand box on x axis				
-	svg.append("g")
-		.append("text")
+	
+//text label for left hand box on x axis					
+				svg.append("g")
+				.append("text")
 				.style("font-size","18px")
 				.attr("class", "label")
 				.attr("text-anchor", "end")
 				.attr("x", width*.1)
 				.attr("y", height*1.05)
-				.text("Low");				
+				.text("Low");								
 
 //append y axis with text label
-	svg.append("g")
-		.attr("class", "y axis")
-		.call(yAxis)
-		.append("text")
+				svg.append("g")
+				.attr("class", "y axis")
+				.call(yAxis)
+				.append("text")
 				.style("font-size","24px")
 				.attr("class", "label")
 				.attr("text-anchor", "middle")
@@ -126,10 +126,10 @@ $(document).ready(function()	{
 				.attr("y", -45)
 				.attr("dy", ".71em")
 				.text("Complexity ($ and People Required)");
-
+				
 //text label for upper box on y axis				
-	svg.append("g")
-		.append("text")
+				svg.append("g")
+				.append("text")
 				.style("font-size","18px")
 				.attr("class", "label")
 				.attr("text-anchor", "end")
@@ -137,248 +137,245 @@ $(document).ready(function()	{
 				.attr("y", -25)
 				.attr("dy", ".71em")
 				.text("High");
-				
-//text label for lower box on y axis
-	svg.append("g")
-		.append("text")
+
+//text label for lower box on y axis				
+				svg.append("g")
+				.append("text")
 				.style("font-size","18px")
 				.attr("class", "label")
 				.attr("text-anchor", "end")
-				//.attr("transform", "rotate(-90)")
 				.attr("transform", "translate("+ (padding/2) +","+(height*.9)+")rotate(-90)")
 				.attr("y", -25)
 				.attr("dy", ".71em")
 				.text("Low");
 				
-//chart title				
-	svg.append("text")
-		.attr("x", width/4)
-		.attr("y", height*-.1)
-		.text("Dell Acquisitions 2008-2014")
-		.style("font-size", "36px");
-								
-//text for each quadrant, all faded slightly so that acquisitions "pop"
+//chart title
+				
+		svg.append("text")
+			.attr("x", width/4)
+			.attr("y", height*-.1)
+			.text("Dell Acquisitions 2008-2014")
+			.style("font-size", "36px");
 
-	svg.append("text")
-		.attr("x", width/7)
-		.attr("y", .2*height)
-		.text("Sustaining")
-		.style("font-size", "24px")
-		.style("opacity", .4);
+//text for each quadrant, all faded slightly so that acquisitions "pop"				
+		svg.append("text")
+			.attr("x", width/7)
+			.attr("y", .2*height)
+			.text("Sustaining")
+			.style("font-size", "24px")
+			.style("opacity", .4);
 
-	svg.append("text")
-		.attr("x", width/7)
-		.attr("y", .27*height)
-		.text("Innovations")
-		.style("font-size", "24px")
-		.style("opacity", .4);
+		svg.append("text")
+			.attr("x", width/7)
+			.attr("y", .27*height)
+			.text("Innovations")
+			.style("font-size", "24px")
+			.style("opacity", .4);
 
-	svg.append("text")
-		.attr("x", width/1.5)
-		.attr("y", .27*height)
-		.text("Game Changers")
-		.style("font-size", "24px")
-		.style("opacity", .4);
+		svg.append("text")
+			.attr("x", width/1.5)
+			.attr("y", .27*height)
+			.text("Game Changers")
+			.style("font-size", "24px")
+			.style("opacity", .4);
 
-	svg.append("text")
-		.attr("x", width/1.5)
-		.attr("y", .75*height)
-		.text("Seeds of")
-		.style("font-size", "24px")
-		.style("opacity", .4);
-		
-	svg.append("text")
-		.attr("x", width/1.5)
-		.attr("y", .82*height)
-		.text("Disruption")
-		.style("font-size", "24px")
-		.style("opacity", .4);
+		svg.append("text")
+			.attr("x", width/1.5)
+			.attr("y", .75*height)
+			.text("Seeds of")
+			.style("font-size", "24px")
+			.style("opacity", .4);
+			
+		svg.append("text")
+			.attr("x", width/1.5)
+			.attr("y", .82*height)
+			.text("Disruption")
+			.style("font-size", "24px")
+			.style("opacity", .4);
 
-	svg.append("text")
-		.attr("x", width/7)
-		.attr("y", .75*height)
-		.text("Short Putts")
-		.style("font-size", "24px")
-		.style("opacity", .4);			
+		svg.append("text")
+			.attr("x", width/7)
+			.attr("y", .75*height)
+			.text("Short Putts")
+			.style("font-size", "24px")
+			.style("opacity", .4);	
 		
 //set legend x and y position
-
+		
 		var LYP = 30, 
 			LXP = 675;
 			
-//create legend, colors, and legend title
+//create "Product Type" legend, colors, and legend title
 			
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP - 5)
-		.attr("y", LYP)
-		.text("Product Type")
-		.style("font-weight", "bold")
-		.style("font-size", "18px");
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP - 5)
+			.attr("y", LYP)
+			.text("Product Type")
+			.style("font-weight", "bold")
+			.style("font-size", "18px");
 
-	svg.append("circle")
-		.attr("cx", LXP)
-		.attr("cy", LYP + 20)
-		.attr("r", 12)
-		.style("fill", "#323232")
-		.attr("stroke", "#000");
-		
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP + 15)
-		.attr("y", LYP + 25)
-		.style("text-anchor", "start")
-		.text(function(d) {
+		svg.append("circle")
+			.attr("cx", LXP)
+			.attr("cy", LYP + 20)
+			.attr("r", 12)
+			.style("fill", "#323232")
+			.attr("stroke", "#000");
+			
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP + 15)
+			.attr("y", LYP + 25)
+			.style("text-anchor", "start")
+			.text(function(d) {
 			return "Big Data";
-		});
+			});
 		
-	svg.append("circle")
-		.attr("cx", LXP)
-		.attr("cy", LYP + 50)
-		.attr("r", 12)
-		.style("fill", "#9C855E")
-		.attr("stroke", "#000");
-		
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP + 15)
-		.attr("y", LYP + 55).
-		style("text-anchor", "start")
-		.text(function(d) {
+		svg.append("circle")
+			.attr("cx", LXP)
+			.attr("cy", LYP + 50)
+			.attr("r", 12)
+			.style("fill", "#9C855E")
+			.attr("stroke", "#000");
+			
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP + 15)
+			.attr("y", LYP + 55)
+			.style("text-anchor", "start")
+			.text(function(d) {
 			return "Security";
 		});
 		
-	svg.append("circle")
-		.attr("cx", LXP).
-		attr("cy", LYP + 80).
-		attr("r", 12).
-		style("fill", "#AB211C")
-		.attr("stroke", "#000");
-		
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP + 15)
-		.attr("y", LYP + 85)
-		.style("text-anchor", "start")
-		.text(function(d) {
+		svg.append("circle")
+			.attr("cx", LXP)
+			.attr("cy", LYP + 80)
+			.attr("r", 12)
+			.style("fill", "#AB211C")
+			.attr("stroke", "#000");
+			
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP + 15)
+			.attr("y", LYP + 85)
+			.style("text-anchor", "start")
+			.text(function(d) {
 			return "Cloud Services";
 		});
 		
-	svg.append("circle")
-		.attr("cx", LXP)
-		.attr("cy", LYP + 110)
-		.attr("r", 12)
-		.style("fill", "#5C8E76")
-		.attr("stroke", "#000");
-		
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP + 15)
-		.attr("y", LYP + 115)
-		.style("text-anchor", "start")
-		.text(function(d) {
+		svg.append("circle")
+			.attr("cx", LXP)
+			.attr("cy", LYP + 110)
+			.attr("r", 12)
+			.style("fill", "#5C8E76")
+			.attr("stroke", "#000");
+			
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP + 15)
+			.attr("y", LYP + 115)
+			.style("text-anchor", "start")
+			.text(function(d) {
 			return "Enterprise Solutions";
 		});
 		
-	svg.append("circle")
-		.attr("cx", LXP)
-		.attr("cy", LYP + 140)
-		.attr("r", 12)
-		.style("fill", "#5B87C6")
-		.attr("stroke", "#000");
-		
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP + 15)
-		.attr("y", LYP + 145)
-		.style("text-anchor", "start")
-		.text(function(d) {
+		svg.append("circle")
+			.attr("cx", LXP)
+			.attr("cy", LYP + 140)
+			.attr("r", 12)
+			.style("fill", "#5B87C6")
+			.attr("stroke", "#000");
+			
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP + 15)
+			.attr("y", LYP + 145)
+			.style("text-anchor", "start")
+			.text(function(d) {
 			return "Mobility";
 		});
 		
-	svg.append("circle")
-		.attr("cx", LXP)
-		.attr("cy", LYP + 170)
-		.attr("r", 12)
-		.style("fill", "#1CA6AB")
-		.attr("stroke", "#000");
-		
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP + 15)
-		.attr("y", LYP + 175)
-		.style("text-anchor", "start")
-		.text(function(d) {
+		svg.append("circle")
+			.attr("cx", LXP)
+			.attr("cy", LYP + 170)
+			.attr("r", 12)
+			.style("fill", "#1CA6AB")
+			.attr("stroke", "#000");
+			
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP + 15)
+			.attr("y", LYP + 175)
+			.style("text-anchor", "start")
+			.text(function(d) {
 			return "Software";
 		});
-							
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP - 5)
-		.attr("y", LYP + 220)
-		.text("Deal Size")
-		.style("font-weight", "bold")
-		.style("font-size","18px");
+				
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP - 5)
+			.attr("y", LYP + 220)
+			.text("Deal Size")
+			.style("font-weight", "bold")
+			.style("font-size","18px");
 
-	
-	svg.append("circle")
-		.attr("cx", LXP)
-		.attr("cy", LYP + 30 + 220)
-		.attr("r", 20)
-		.style("fill", "#bbb")
-		.attr("stroke", "#000");
+//create "Deal Size" legend
+
+		svg.append("circle")
+			.attr("cx", LXP)
+			.attr("cy", LYP + 30 + 220)
+			.attr("r", 20)
+			.style("fill", "#bbb")
+			.attr("stroke", "#000");
+			
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP + 25)
+			.attr("y", LYP + 250)
+			.style("text-anchor", "start")
+			.text(">$1B");
+			
+		svg.append("circle")
+			.attr("cx", LXP)
+			.attr("cy", LYP + 70 + 220)
+			.attr("r", 15)
+			.style("fill", "#bbb")
+			.attr("stroke", "#000");
+			
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP + 25)
+			.attr("y", LYP + 290)
+			.style("text-anchor", "start")
+			.text("$500M to $1B");
+			
+		svg.append("circle")
+			.attr("cx", LXP)
+			.attr("cy", LYP + 110 + 210)
+			.attr("r", 9)
+			.style("fill", "#bbb")
+			.attr("stroke", "#000");
+			
+		svg.append("text")
+			.attr("class", "label")
+			.attr("x", LXP + 25)
+			.attr("y", LYP + 320)
+			.style("text-anchor", "start")
+			.text("<$500M");
 		
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP + 25)
-		.attr("y", LYP + 250)
-		.style("text-anchor", "start")
-		.text(">$1B");
-		
-	svg.append("circle")
-		.attr("cx", LXP)
-		.attr("cy", LYP + 70 + 220)
-		.attr("r", 15)
-		.style("fill", "#bbb")
-		.attr("stroke", "#000");
-		
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP + 25)
-		.attr("y", LYP + 290)
-		.style("text-anchor", "start")
-		.text("$500M to $1B");
-		
-	svg.append("circle")
-		.attr("cx", LXP)
-		.attr("cy", LYP + 110 + 210)
-		.attr("r", 9)
-		.style("fill", "#bbb")
-		.attr("stroke", "#000");
-		
-	svg.append("text")
-		.attr("class", "label")
-		.attr("x", LXP + 25)
-		.attr("y", LYP + 320)
-		.style("text-anchor", "start")
-		.text("<$500M");
-		
-//create circles for each acquisition
-	svg.selectAll(".dot")
-		
-		.data(data.sort(
-			function(a, b) {
-				return b.DealSize - a.DealSize;
-			}))
+	//create circles for each acquisition
+		svg.selectAll(".dot")
+			.data(data.sort(
+				function(a, b) {
+					return b.DealSize - a.DealSize;
+				}))
 			.enter()
 			.append("circle")
 				.attr("class", "dot")
-				
 				.attr("r", 
 					function(d) {
 						return (4 + (d.DealSize * .0006));
-					})//base of 4 plus size proportional to deal size
-				
+					})//gave it a base of 4 plus size proportional to deal size
 				.attr("cx", 
 					function(d) {
 						return x(d.Dif1);//x position based on degree of difference to current biz
@@ -388,7 +385,7 @@ $(document).ready(function()	{
 						return y(d.Com1);//y position based on complexity
 					})
 					
-				//color dot based on product type
+				//color dot based on product type	
 				.style("fill", 
 					function(d) {
 						if (d.type == 1) {
@@ -406,25 +403,25 @@ $(document).ready(function()	{
 						}
 					})
 					
-				//show tooltip on mouseover of dot
-				.on("mouseover", function(d) {
-          			tooltip.transition()
-               	.duration(200)
-               	.style("opacity", .9);
-          			tooltip.html(d["name"])
-               	.style("left", (d3.event.pageX + 5) + "px")
-               	.style("top", (d3.event.pageY - 28) + "px");
-      				})
-	  
-	 			//fade tooltip on mouseout of dot
-    			 .on("mouseout", function(d) {
-         			 tooltip.transition()
-               	.duration(500)
-               	.style("opacity", 0);
-      				}); //end dot creation and associated mouseover and mouseout
-	  	 								
-						
-//set minimum and maximum steps for slider, slider button title, and timer interval				
+					//show tooltip on mouseover of dot
+					.on("mouseover", function(d) {
+          				tooltip.transition()
+               		.duration(200)
+               		.style("opacity", .9);
+          				tooltip.html(d["name"])
+               		.style("left", (d3.event.pageX + 5) + "px")
+               		.style("top", (d3.event.pageY - 28) + "px");
+      					})
+      
+	  					//fade tooltip on mouseover of dot
+	  					.on("mouseout", function(d) {
+          				tooltip.transition()
+               		.duration(500)
+               		.style("opacity", 0);
+      					}); //end dot creation and associated mouseover and mouseout
+	  	 
+		//set minimum and maximum steps for slider, slider button title, and timer interval		
+		
 		var running = false;
 		var timer;
 		
@@ -441,7 +438,7 @@ $(document).ready(function()	{
 				clearInterval(timer);
 				
 			}//end of "true" branch
-
+			
 			else if (running == false) {
 			
 				$("button").html("Pause");
@@ -457,14 +454,12 @@ $(document).ready(function()	{
 						$("#slider").val(sliderValue);
 						update();
 					
-						}, duration);
-						running = true;				
-				}//end of "false" branch
+				}, duration);
+				running = true;				
 				
-		});//end of button "on click" function
-				
+			}//end of "false" branch
 
-//slider function, updates "dots" based on year slider is positioned on
+		});//end of button "on click" function
 	
 		$("#slider").on("change", function(){
 			update();
@@ -503,11 +498,11 @@ $(document).ready(function()	{
 							break;
 						case "2014":
 							return y(d.Com7);
-							break;	
+							break;
 					}//end of switch
 				})//end of function that moves dots up onto chart canvas by changing y attribute
-			
-			//position "degree of difference" or X attribute by year	
+				
+				//position "degree of difference" or X attribute by year
 				.transition()
 				.duration(600)
 				.ease("linear")
@@ -533,18 +528,15 @@ $(document).ready(function()	{
 							break;
 						case "2014":
 							return x(d.Dif7);
-							break;	
+							break;
 					}//end of switch
 				});//end of function that positions dots based on x attribute
 		};//end of dot positioning function "update"
-	
+		
 	});//end of d3.csv function
 
 });//end of document ready function
 
-
-
-	
 
 
 
