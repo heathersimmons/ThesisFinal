@@ -1,24 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<head>
-<title>Dell Photo Gallery</title>
 
 <!--
-Template created by http://html-tuts.com/>HTML-TUTS.com. View full tutorial at http://html-tuts.com/.
+Photo gallery template created by Dan Doicaru at http://html-tuts.com/>HTML-TUTS.com. View full tutorial at http://html-tuts.com/. 
 -->
 
+<head>
+
+<title>Dell Photo Gallery</title>
+
 <style type="text/css">
+
+/* theme gray colour and theme garamond font */
+
 body {
 	background-color: #323232;
 	color:#FFF;
+	margin-left: 20px;
 	margin-top: 20px;
 	font-family:eb-garamond;
-	font-weight:normal;
-	
+	font-weight:normal;	
 }
+
+/* a, a:hover, a.back, and a.back:link control and style the back arrow and the text in the back link */
+
 a {
 	color: #FFF;
+	margin-left:120px;
+	align: left;
+	font-size:1.2em;
 }
+
 a:hover {
 	color: #FFF;
 	text-decoration: underline;
@@ -30,12 +42,9 @@ a.back {
 	text-decoration:none;
 	color:#323232;
 	font-weight: normal;
-	display:block;
-	margin-left:20px;
+	margin-left:80px;
 	margin-top:1em;
-	/*text-shadow: 1px 1px 4px #000;*/
-	font-size: 1.2em;
-	line-height:1;
+	font-size: 1.6em;
 }
 
 a.back:link{
@@ -43,16 +52,13 @@ a.back:link{
 	text-decoration:none;
 	color:#323232;
 	font-weight: normal;
-	display:block;
 	margin-left:20px;
 	margin-top:1em;
-	/*text-shadow: 1px 1px 4px #000;*/
 	font-size: 1.2em;
 	line-height:1;
 }
-.back_arrow{
-		
-}
+
+/* Thumbnails are the row of 5-7 small pictures at the top */
 
 .thumbnails img {
 	height: 80px;
@@ -66,23 +72,32 @@ a.back:link{
 	cursor:pointer;
 }
 
+/* preview is the image that shows up as soon as the page loads */
+
 .preview img {
 	border: 4px solid #444;
 	padding: 1px;
 	width: 800px;
 }
+
 </style>
 
 </head>
 <body>
 
+<!--gallery holds the row of small pictures, it contains a back arrow, which is the &lt notation, and &nbsp is a space-->
+
 <div class="gallery" align="center">
-	
-<div><a href="dell.html"><span>&lt;</span>&nbsp;Home</a>
+
+	<div class="back" align = "left" ><a href="dell.html"><span> &lt;</span>&nbsp;Home</a>
+    
 </div>
 	<br />
 
+<!--When user mouses over a thumbnail, that thumbnail shows up in the big picture pane (i.e., "preview") -->
+
 	<div class="thumbnails">
+    
 	  <img onmouseover="preview.src=img1.src" name="img1" src="michael dell very young.png" alt=""/>
 	  <img onmouseover="preview.src=img2.src" name="img2" src="competitor stock price 300 cropped.png" alt=""/>
 	  <img onmouseover="preview.src=img4.src" name="img4" src="frontoftshirtwithtext3.png" alt=""/>
@@ -91,12 +106,12 @@ a.back:link{
       <img onmouseover="preview.src=img7.src" name="img7" src="dellacquisitions20082014withtext.png" alt=""/>
         
 	</div><br/>
+    
+<!--Preview is the big picture pane in the middle of the screen.  preview.png is same as michael dell very young.png-->
 
 	<div class="preview" align="center">
 		<img name="preview" src="preview.png" alt=""/>
 	</div>
-
-</div>
 
 
 </body>
