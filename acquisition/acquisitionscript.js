@@ -1,6 +1,6 @@
 //Animated scatterplot code and styling modified from http://bl.ocks.org/darrenjaworski/5544599
 //Numerous scaling, axis, tooltip, and formatting tips from http://bl.ocks.org/mbostock and http://christopheviau.com/d3list/
-//Having all dots come up from bottom and collapse in same direction is my own mad invention.  Feel free to use it.  Simply set x-coordinate to a big negative number in the csv data file, until you need the dot to appear).
+//Having all dots come up from bottom and collapse in same direction is my own mad invention.  Feel free to use it.  Simply set y-coordinate to a big negative number in the csv data file, until you need the dot to appear.
 
 $(document).ready(function()	{
 	
