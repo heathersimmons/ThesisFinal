@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+
+<!--Bar graph code and styling modified from http://bl.ocks.org/mbostock/3885304-->
+
+</head>
+
+
+<style>
+
+/*Theme colours and fonts*/
+.bar {
+  fill: #417DBF;
+}
+.text {
+font:  24 px garamond;
+color:#323232;	
+	
+}
+
+/*Don't need this, but left in for educational purposes.  Changes bar colour on hover.*/
+.bar:hover {
+  fill: #CCCCCC;
+}
+
+/*Styles the axis lines.  crispEdges make the lines look sharper.*/
+.axis {
+  font: 16px garamond;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #323232;
+  shape-rendering: crispEdges;
+}
+
+/*Kills x axis line to make it more readable*/
+.x.axis path {
+  display: none;
+}
+</style>
+
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+<!--Set the size of the visualization-->
+var margin = {top: 40, right: 20, bottom: 30, left: 70},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+	
+<!--Axes set to run width and height of visualization-->	
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+var y = d3.scale.linear()
+    .range([height, 0]);
+	
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+	
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+<!--Add the svg item - basically, set up a canvas so we can draw the visualization-->	
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+<!--Add title text and explanatory text in body of chart-->	
+svg.append("text")
+		.attr("y", height -(height*1.06))
+        .attr("x", (width/2.4))
+        .attr("dy", "1em")
+        .style("text-anchor", "left")
+		.style("font-size", "24px")
+		.style("font","garamond")
+		.style("fill","#323232")
+        .text("Dell Stock Market Valuation");
+		
+svg.append("text")
+		.attr("y", height -(height*.7))
+        .attr("x", (width/17))
+        .attr("dy", "1em")
+        .style("text-anchor", "left")
+		.style("font-size", "20px")
+		.style("font","garamond")
+		.style("fill","##323232")
+        .text("Gains $100 billion in 10 years");
+			
+svg.append("text")
+		.attr("y", height -(height*.5))
+        .attr("x", (width/1.36))
+        .attr("dy", "1em")
+        .style("text-anchor", "left")
+		.style("font-size", "20px")
+		.style("font","garamond")
+		.style("fill","#323232")
+        .text("Loses $100 billion in 10 years");	
+		
+<!--Tell d3 where to pull the data from-->			
+d3.tsv("dellstockvaluation.tsv", type, function(error, data) {
+  x.domain(data.map(function(d) { return d.date; }));
+  y.domain([0, d3.max(data, function(d) { return d.valuation; })]);
+  
+<!--Call or append the axes and related text-->  
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+	  
+	  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+	  .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+	  .style("font-size", "18px")
+      .text("$ Millions");
+
+<!--Add the bars-->	  	 	  	  
+  svg.selectAll(".bar")
+      .data(data)
+    .enter()
+	.append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.date); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.valuation); })
+      .attr("height", function(d) {
+		   return height - y(d.valuation);})
+		   ; 
+});
+
+<!--Function which pulls valuation data as a number from dellstockvaluation.tsv-->
+function type(d) {
+  d.valuation = +d.valuation;
+  return d;
+}
+</script>
