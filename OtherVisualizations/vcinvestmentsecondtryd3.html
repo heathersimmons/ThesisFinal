@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+
+<!--Bar graph code and styling modified from http://bl.ocks.org/mbostock/3885304-->
+
+</head>
+
+<style>
+
+/*Theme colours and fonts*/
+.bar {
+  fill: #417DBF;
+}
+
+.text {
+font:  16 px garamond;
+color:#323232;	
+	
+}
+
+/*Don't need this, but left in for educational purposes.  Changes bar colour on hover.*/
+.bar:hover {
+  fill: #CCCCCC;
+}
+
+/*Styles the axis lines.  crispEdges make the lines look sharper.*/
+.axis {
+  font: 16px garamond;
+  fill:#323232;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #323232;
+  shape-rendering: crispEdges;
+}
+
+/*Kills x axis line to make it more readable*/
+.x.axis path {
+  display: none;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+<!--Set the size of the visualization-->
+var margin = {top: 100, right: 20, bottom: 30, left: 70},
+    width = 1000 - margin.left - margin.right,
+    height = 667 - margin.top - margin.bottom;
+
+<!--Axes set to run width and height of visualization-->
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");  
+
+<!--format with comma separator-->
+var formatValue = d3.format(",.0f");	
+
+<!--Add the svg item - basically, set up a canvas so we can draw the visualization-->
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+<!--Tell d3 where to pull the data from-->	
+d3.tsv("vcinvestmentannual.tsv", type, function(error, data) {
+  x.domain(data.map(function(d) { return d.year; }));
+  y.domain([0, d3.max(data, function(d) { return d.investment; })]);
+  
+<!--Call or append the axes and related text-->
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+	  
+	  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+	   .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+	  .style("font-size", "18px")
+      .text("$ Millions");
+	  
+<!--Add the bars and data labels-->
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter()
+	.append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.year); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.investment); })
+      .attr("height", function(d) {
+		   return height - y(d.investment);})
+		   ;
+
+svg.selectAll(".text")
+    .data(data)
+	.enter()
+  .append("text")
+    .attr("class","text")
+    .attr("text-anchor", "right")
+    .attr("x", function(d) { return x(d.year); })
+    .attr("y", function(d) { return(y(d.investment)-10);})
+    .attr("font-family", "garamond") 
+    .attr("font-size", "16px")
+    .attr("fill", "#323232")
+    .text(function(d) {
+    return "$" + formatValue(d.investment);
+});
+ 
+ 
+ svg.append("text")
+		.attr("y", -70)
+        .attr("x", (width/3))
+        .attr("dy", "1em")
+        .style("text-anchor", "left")
+		.attr("font-family", "garamond") 
+		.attr("font-size", "24px")
+		.style("fill","#323232")
+        .text("US Venture Capital Investments");	   
+  
+});
+
+<!--Function which pulls valuation data as a number from vcinvestmentannual.tsv-->
+function type(d) {
+  d.investment = +d.investment;
+  return d;
+}
+
+</script>
