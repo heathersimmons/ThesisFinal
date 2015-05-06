@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+
+<!--Multi-line graph code and styling modified from http://bl.ocks.org/mbostock/3884955-->
+
+</head>
+
+<style>
+
+/*Theme font*/
+body {
+  font: 16px garamond;
+}
+
+/*Styles the axis lines.  crispEdges make the lines look sharper.*/
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/*Kills x axis line to make it more readable*/
+.x.axis path {
+  display: none;
+}
+
+/*Styles a basic line.  Colours will be determined later in the code*/
+.line {
+  fill: none;
+  stroke-width: 2.5px;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script>
+
+<!--Set the size of the visualization-->
+var margin = {top: 70, right: 100, bottom: 30, left: 50},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+<!--Format the date in years-->
+var parseDate = d3.time.format("%Y").parse;
+
+<!--Format the y axis in percentages-->
+var percent = d3.format(".1%");
+
+<!--Axes set to run width and height of visualization-->
+var x = d3.time.scale()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+<!--Acess d3's built in colour scales - sets line colours to some built in defaults-->
+var color = d3.scale.category10();
+
+<!--Set up the axes-->
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+	.ticks(22);
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+	.tickFormat(percent);
+
+<!--Variable for lines representing unit growth over time-->
+var line = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.growth); });
+
+<!--Add the svg item - basically, set up a canvas so we can draw the visualization-->
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+<!--Tell d3 where to pull the data from and how many colours we need-->
+d3.tsv("marketgrowth3.tsv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
+
+<!--Format the years so d3 can read it-->
+  data.forEach(function(d) {
+    d.date = parseDate(d.date);
+  });
+
+<!--Map colours to each competitor listed-->
+  var growthRate = color.domain().map(function(name) {
+    return {
+      name: name,
+      values: data.map(function(d) {
+        return {date: d.date, growth: +d[name]};
+      })
+    };
+  });
+
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+
+  y.domain([
+    d3.min(growthRate, function(c) { return d3.min(c.values, function(v) { return v.growth; }); }),
+    d3.max(growthRate, function(c) { return d3.max(c.values, function(v) { return v.growth; }); })
+  ]);
+
+<!--Call or append the axes and related text-->
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "start")
+	  .style("font-size", "18px")
+      .text("Percent");
+	  
+<!--Append title-->
+svg.append("text")
+		.attr("y", height -(height*1.10))
+        .attr("x", (width/3))
+        .attr("dy", "1em")
+        .style("text-anchor", "left")
+		.style("font-size", "24px")
+		.attr("font","garamond")
+		.style("fill","black")
+        .text("Dell Unit Growth Rates Relative to Market");
+
+<!--Add coloured lines and related identifying text to graph-->
+  var rate = svg.selectAll(".rate")
+      .data(growthRate)
+    .enter().append("g")
+      .attr("class", "rate");
+
+  rate.append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { return line(d.values); })
+      .style("stroke", function(d) { return color(d.name); })
+	  		
+	rate.append("text")
+      .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
+      .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.growth) + ")"; })
+      .attr("x", 3)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.name; });
+	  
+
+});
+
+</script>
