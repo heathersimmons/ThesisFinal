@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+<!--Line graph code and styling modified from http://bl.ocks.org/mbostock/3884955-->
+</head>
+
+<style>
+
+/*Theme font*/
+body {
+  font: 16px garamond;
+}
+
+/*Styles the axis lines.  crispEdges make the lines look sharper.*/
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #323232;
+  shape-rendering: crispEdges;
+}
+
+/*Kills x axis line to make it more readable*/
+.x.axis path {
+  display: none;
+}
+
+/*Styles the line*/
+.line {
+  fill: none;
+  stroke: #5B87C6;
+  stroke-width: 3.5px;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script>
+
+<!--Set the size of the visualization-->
+var margin = {top: 50, right: 50, bottom: 50, left: 90},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+<!--Format the date in years-->
+var parseDate = d3.time.format("%Y").parse;
+
+<!--Axes set to run width and height of visualization-->
+var x = d3.time.scale()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+<!--format axes, format 3 ticks on y axis with dollar signs and no decimals-->	
+var formatValue = d3.format(",.0f");
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+	.ticks(3)
+	.tickFormat(function(d) { return "$"+ formatValue(d)});
+
+<!--Draw the line-->
+var line = d3.svg.line()
+	.interpolate("basis")
+    .x(function(d) { return x(d.year); })
+    .y(function(d) { return y(d.savings); });
+
+<!--Add the svg item - basically, set up a canvas so we can draw the visualization-->
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+<!--Tell d3 where to pull the data from-->
+d3.tsv("retirementsavings.tsv", function(error, data) {
+  data.forEach(function(d) {
+    d.year = parseDate(d.year);
+    d.savings = +d.savings;
+  });
+
+<!--set domain, or input range, for each axis-->
+  x.domain(d3.extent(data, function(d) { return d.year; }));
+  y.domain(d3.extent(data, function(d) { return d.savings; }));
+
+<!--Don't show  X axis, it is too busy-->
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")");
+      //.call(xAxis);
+
+<!-- Call, or show, y axis-->
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+	  
+<!--Add a few text data points in place of X axis values-->	  
+svg.append("text")
+	  .attr("class", "text")
+        .attr("y", height-(height*.06))
+        .attr("x", width/35)
+        .attr("dy", "1em")
+		.attr("font-family", "garamond")
+	 .attr("font-size", "20px")
+        .style("text-anchor", "left")
+		.style("fill","#323232")
+        .text("$1 in 2015");
+	  
+	  svg.append("text")
+        .attr("y", height-(height*.07))
+        .attr("x", width/4)
+        .attr("dy", "1em")
+		.attr("font-family", "garamond")
+	 .attr("font-size", "20px")
+        .style("text-anchor", "left")
+		.style("fill","#323232")
+        .text("$128 in 2022");
+		
+		svg.append("text")
+		.attr("y", height-(height*.09))
+        .attr("x", 2*(width/4))
+        .attr("dy", "1em")
+		.attr("font-family", "garamond")
+	 .attr("font-size", "20px")
+        .style("text-anchor", "left")
+		.style("fill","323232")
+        .text("$16,384 in 2029");
+		
+		svg.append("text")
+		.attr("y", height-(height*.22))
+        .attr("x", 2.7*(width/4))
+        .attr("dy", "1em")
+		.attr("font-family", "garamond")
+	 .attr("font-size", "20px")
+        .style("text-anchor", "left")
+		.style("fill","323232")
+        .text("$2,097,152 in 2036");
+	
+		svg.append("text")
+		.attr("y", height-(height*.92))
+        .attr("x", 3.0*(width/4))
+        .attr("dy", "1em")
+		.attr("font-family", "garamond")
+	 .attr("font-size", "20px")
+        .style("text-anchor", "left")
+		.style("fill","#323232")
+        .text("$16,777,216 in 2039");
+
+<!--Add chart title-->
+		svg.append("text")
+		.attr("y", height -(height*1.1))
+        .attr("x", (width/5))
+        .attr("dy", "1em")
+		.attr("font-family", "garamond")
+	 .attr("font-size", "24px")
+        .style("text-anchor", "left")	
+		.style("fill","#323232")
+        .text("Moore's Law Applied to Retirement Savings");
+		
+<!--Draw the line-->
+  svg.append("path")
+      .datum(data)
+      .attr("class", "line")
+      .attr("d", line);
+});
+
+</script>
